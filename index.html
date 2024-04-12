@@ -5,26 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body class="bg-gray-100">
-    <header class="bg-blue-500 text-white py-4">
-        <h1 class="text-3xl font-bold text-center">Weather Dashboard</h1>
+    <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-6">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold text-center">Weather Dashboard</h1>
+        </div>
     </header>
 
     <main class="container mx-auto mt-8">
-        <section class="mb-8">
-            <form id="search-form" class="flex">
-                <input type="text" id="city-input" placeholder="Enter city name" class="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Search</button>
-            </form>
-            <div id="search-history" class="mt-4"></div>
-        </section>
+        <div class="flex flex-col md:flex-row">
+            <section class="md:w-1/4 mb-8 md:mb-0 md:mr-8">
+                <form id="search-form" class="flex items-center mb-4">
+                    <input type="text" id="city-input" placeholder="Enter city name" class="flex-1 px-4 py-3 text-lg border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" class="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <div id="search-history" class="bg-white rounded-md shadow-md p-4"></div>
+            </section>
 
-        <section>
-            <div id="current-weather" class="bg-white p-4 rounded-md shadow-md mb-8"></div>
-            <div id="forecast" class="grid grid-cols-1 md:grid-cols-5 gap-4"></div>
-        </section>
+            <section class="md:w-3/4">
+                <div id="current-weather" class="bg-white p-6 rounded-md shadow-lg mb-8"></div>
+                <h2 class="text-2xl font-bold mb-4">5-Day Forecast</h2>
+                <div id="forecast" class="grid grid-cols-1 md:grid-cols-5 gap-6"></div>
+            </section>
+        </div>
     </main>
+
+    <footer class="bg-gray-900 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Weather Dashboard. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="assets/script.js"></script>
 </body>
